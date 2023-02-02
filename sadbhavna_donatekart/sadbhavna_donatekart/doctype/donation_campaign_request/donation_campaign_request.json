@@ -1,0 +1,213 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-01-03 12:21:01.286906",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "full_name",
+  "column_break_2",
+  "requester_type",
+  "section_break_4",
+  "organisation_name",
+  "column_break_10",
+  "organisation_website",
+  "section_break_8",
+  "phone",
+  "column_break_7",
+  "email",
+  "column_break_6",
+  "social_media_page",
+  "section_break_12",
+  "campaign_story",
+  "column_break_16",
+  "beneficiary_group",
+  "section_break_18",
+  "status",
+  "ngo",
+  "campaign"
+ ],
+ "fields": [
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "options": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone",
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "default": "NGO",
+   "fieldname": "requester_type",
+   "fieldtype": "Select",
+   "label": "Requester type",
+   "options": "NGO\nIndivisual/Group"
+  },
+  {
+   "fieldname": "social_media_page",
+   "fieldtype": "Data",
+   "label": "Social Media Page "
+  },
+  {
+   "fieldname": "campaign_story",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Campaign Story",
+   "reqd": 1
+  },
+  {
+   "fieldname": "beneficiary_group",
+   "fieldtype": "Text",
+   "label": "Beneficiary Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.requester_type=='NGO'",
+   "fieldname": "organisation_name",
+   "fieldtype": "Data",
+   "label": "Organisation Name"
+  },
+  {
+   "depends_on": "eval:doc.requester_type=='NGO';",
+   "fieldname": "organisation_website",
+   "fieldtype": "Data",
+   "label": "Organisation Website"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "ngo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "NGO/Indivisual",
+   "options": "NGO"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": ".DD.-.MM.-"
+  },
+  {
+   "fieldname": "campaign",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Campaign",
+   "options": "Donation Campaign"
+  },
+  {
+   "default": "New Request",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Request Status",
+   "options": "New Request\nVerified\nPending Campaign\nLive Campaign\nClose Campaign\nRejected"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-01-30 13:46:00.476958",
+ "modified_by": "Administrator",
+ "module": "Sadbhavna Donatekart",
+ "name": "Donation Campaign request",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "organisation_name,full_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Red",
+   "title": "New Request"
+  },
+  {
+   "color": "Yellow",
+   "title": "Verified"
+  },
+  {
+   "color": "Light Blue",
+   "title": "Pending Campaign"
+  },
+  {
+   "color": "Green",
+   "title": "Live Campaign"
+  },
+  {
+   "color": "Gray",
+   "title": "Close Campaign"
+  },
+  {
+   "color": "Orange",
+   "title": "Rejected "
+  }
+ ]
+}

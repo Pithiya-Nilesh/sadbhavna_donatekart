@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-01-13 16:56:59.343444",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "details_tab",
+  "campaign_title",
+  "column_break_2",
+  "status",
+  "section_break_4",
+  "donation_amount",
+  "column_break_6",
+  "raised_amount",
+  "section_break_8",
+  "start_date",
+  "column_break_10",
+  "end_date",
+  "section_break_12",
+  "campaign_category",
+  "column_break_14",
+  "campain_image",
+  "section_break_16",
+  "short_description",
+  "about_campaign",
+  "campaign_request",
+  "ngo",
+  "naming_series",
+  "campaign_item_tab",
+  "add_campaign_items",
+  "route",
+  "published"
+ ],
+ "fields": [
+  {
+   "fieldname": "raised_amount",
+   "fieldtype": "Currency",
+   "label": "Raised Amount"
+  },
+  {
+   "fieldname": "campaign_request",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Campaign request",
+   "options": "Donation Campaign request"
+  },
+  {
+   "fieldname": "short_description",
+   "fieldtype": "Text Editor",
+   "label": "Short Description"
+  },
+  {
+   "fieldname": "donation_amount",
+   "fieldtype": "Currency",
+   "label": "Donation Amount"
+  },
+  {
+   "fieldname": "about_campaign",
+   "fieldtype": "Text Editor",
+   "label": "About Camapign (In Details)"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nLive\nClosed\nRejected"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End date"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start date"
+  },
+  {
+   "fieldname": "campaign_title",
+   "fieldtype": "Data",
+   "label": "Campaign Title"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "campain_image",
+   "fieldtype": "Attach Image",
+   "label": "Campaign Image",
+   "options": "Image"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series"
+  },
+  {
+   "fieldname": "ngo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "NGO",
+   "options": "NGO"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "add_campaign_items",
+   "fieldtype": "Table",
+   "label": "Add Campaign Items",
+   "options": "Donation Campaign Item"
+  },
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Campaign Details"
+  },
+  {
+   "fieldname": "campaign_item_tab",
+   "fieldtype": "Tab Break",
+   "label": "Campaign Items"
+  },
+  {
+   "fieldname": "campaign_category",
+   "fieldtype": "Link",
+   "label": "Campaign category",
+   "options": "Donation Campaign Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  }
+ ],
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2023-01-31 16:22:59.300469",
+ "modified_by": "Administrator",
+ "module": "Sadbhavna Donatekart",
+ "name": "Donation Campaign",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "route",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

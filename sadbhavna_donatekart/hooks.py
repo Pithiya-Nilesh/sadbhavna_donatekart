@@ -2,9 +2,9 @@ from . import __version__ as app_version
 
 app_name = "sadbhavna_donatekart"
 app_title = "Sadbhavna Donatekart"
-app_publisher = "Sanskar Technolab"
-app_description = "this app for sadbhavna donatekart"
-app_email = "nilesh@sanskartechnolab.com"
+app_publisher = "Sanskar"
+app_description = "App for Sadbhavna Donatekart"
+app_email = "rajvi@sanskartechnolab.com"
 app_license = "MIT"
 
 # Includes in <head>

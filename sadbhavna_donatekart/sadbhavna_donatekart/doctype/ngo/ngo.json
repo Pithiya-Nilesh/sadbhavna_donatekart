@@ -1,0 +1,282 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2023-01-03 15:56:18.486684",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_2",
+  "organisation_name",
+  "column_break_6",
+  "organisation_website",
+  "section_break_5",
+  "full_name",
+  "column_break_15",
+  "designation",
+  "section_break_8",
+  "state",
+  "column_break_8",
+  "city",
+  "section_break_3",
+  "phone",
+  "column_break_12",
+  "email",
+  "section_break_17",
+  "regestered_address",
+  "column_break_31",
+  "pan",
+  "section_break_21",
+  "registration_of_ngo_as",
+  "column_break_23",
+  "tan",
+  "section_break_25",
+  "last_years_income",
+  "column_break_27",
+  "last_years_expenditure",
+  "section_break_29",
+  "80g_registration_number",
+  "column_break_19",
+  "12a_registration_number",
+  "section_break_33",
+  "about_ngo",
+  "column_break_35",
+  "causes_you_support",
+  "section_break_37",
+  "user",
+  "requester_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "no_copy": 1,
+   "options": "Email",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "regestered_address",
+   "fieldtype": "Data",
+   "label": "Regestered Address"
+  },
+  {
+   "fieldname": "registration_of_ngo_as",
+   "fieldtype": "Data",
+   "label": "Registration of NGO as"
+  },
+  {
+   "fieldname": "last_years_income",
+   "fieldtype": "Data",
+   "label": "Last Year's Income"
+  },
+  {
+   "fieldname": "last_years_expenditure",
+   "fieldtype": "Data",
+   "label": "Last Year's Expenditure"
+  },
+  {
+   "fieldname": "80g_registration_number",
+   "fieldtype": "Data",
+   "label": "80G Registration Number"
+  },
+  {
+   "fieldname": "12a_registration_number",
+   "fieldtype": "Data",
+   "label": "12A Registration Number"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN"
+  },
+  {
+   "fieldname": "tan",
+   "fieldtype": "Data",
+   "label": "TAN"
+  },
+  {
+   "fieldname": "causes_you_support",
+   "fieldtype": "Select",
+   "label": "Causes You Support",
+   "options": "Giving to charity makes you feel good\nGiving to charity strengthens personal values"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.requester_type=='NGO'",
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "organisation_name",
+   "fieldtype": "Data",
+   "label": "Organisation Name",
+   "mandatory_depends_on": "eval:doc.requester_type=='NGO';"
+  },
+  {
+   "fieldname": "organisation_website",
+   "fieldtype": "Data",
+   "label": "Organisation Website"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.requester_type=='NGO'",
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.type=='NGO'",
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.requester_type=='NGO'",
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone",
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "requester_type",
+   "fieldtype": "Select",
+   "label": "Requester Type",
+   "options": "NGO\nIndivisual/Group"
+  },
+  {
+   "fieldname": "about_ngo",
+   "fieldtype": "Small Text",
+   "label": "About NGO"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_37",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Donation Campaign",
+   "link_fieldname": "ngo"
+  },
+  {
+   "link_doctype": "Donation Campaign request",
+   "link_fieldname": "ngo"
+  }
+ ],
+ "modified": "2023-01-19 11:12:37.502632",
+ "modified_by": "Administrator",
+ "module": "Sadbhavna Donatekart",
+ "name": "NGO",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "organisation_name,full_name,email,phone,city,state",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
