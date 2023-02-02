@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include sadbhavna_donatekart *.css
+recursive-include sadbhavna_donatekart *.csv
+recursive-include sadbhavna_donatekart *.html
+recursive-include sadbhavna_donatekart *.ico
+recursive-include sadbhavna_donatekart *.js
+recursive-include sadbhavna_donatekart *.json
+recursive-include sadbhavna_donatekart *.md
+recursive-include sadbhavna_donatekart *.png
+recursive-include sadbhavna_donatekart *.py
+recursive-include sadbhavna_donatekart *.svg
+recursive-include sadbhavna_donatekart *.txt
+recursive-exclude sadbhavna_donatekart *.pyc
