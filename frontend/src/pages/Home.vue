@@ -7,7 +7,7 @@
 
 <template> 
 <!-- <div class="flex flex-wrap"> -->
-  <div v-for="data in campaigns"> 
+  <!-- <div v-for="data in campaigns"> 
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" v-bind:src="data.campain_image" alt="asdf" @click="viewmore(data.name)">
       <div class="card-body" @click="viewmore(data.name)">
@@ -18,15 +18,42 @@
           <div class="progress-bar bg-warning" style="width:{{data.raised_amount*100/data.donation_amount}}%"></div>
          </div><br>        
       </div>
-      <!-- <Button @click="viewmore(data.name)" appearance="primary">View More</Button> -->
+      <Button @click="viewmore(data.name)" appearance="primary">View More</Button>
       <button href="#">share</button>
       <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="donate(data.name)"> donate now </button>
-        <!-- <Button @click="donate(data.name)" appearance="danger">Donate</Button> -->
+        <Button @click="donate(data.name)" appearance="danger">Donate</Button>
+    </div>
+  </div> -->
+<!-- </div> -->
+<!-- ////////////////// -->
+<div v-for="data in campaigns">
+<div class="p-10">  
+    <!--Card 1-->
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+      <img class="w-full" :src="data.campain_image" alt="Mountain" @click="viewmore(data.name)">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{ data.short_description }}</div>
+        <p class="text-gray-700 text-base ">
+         By:  {{ data.ngo }}
+         <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+            <div v-if="data.raised_amount" class="bg-green-500 h-2.5 rounded-full" style="width: {{ data.raised_amount*100/data.donation_amount }}%"></div>
+             <!-- <div v-if="data.raised_amount" class="bg-blue-600 h-2.5 rounded-full" style="width: 50%"></div> -->
+        </div>
+        <div class="flex justify-between mt-2 font-bold">
+          <span>Raised: {{ data.raised_amount }}</span><span>Goal: {{ data.donation_amount }}</span>
+        </div>
+      </p>
+      </div>
+      <div class="px-6 pt-4 pb-2 flex justify-between">
+        <button class="text-green-500">share</button>
+        <button class="rounded-lg bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="donate(data.name)"> donate now </button>
+        <!-- <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span> -->
+      </div>
     </div>
   </div>
-<!-- </div> -->
-
-
+</div>
 <!-- ///////////////// -->
 
 <!-- <div class="flex flex-wrap">

@@ -51,7 +51,7 @@
   },
   {
    "fieldname": "short_description",
-   "fieldtype": "Text Editor",
+   "fieldtype": "Text",
    "label": "Short Description"
   },
   {
@@ -177,7 +177,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2023-02-03 15:19:16.678712",
+ "modified": "2023-02-06 15:13:08.694067",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

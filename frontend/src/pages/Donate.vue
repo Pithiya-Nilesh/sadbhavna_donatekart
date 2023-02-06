@@ -17,5 +17,6 @@ export default{
         const name = useRoute();
         this.name = name.params.name
     }
+
 }
 </script>
