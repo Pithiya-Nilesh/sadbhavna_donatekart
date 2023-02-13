@@ -17,10 +17,31 @@ const routes = [
     component: () => import('@/pages/CampaignDonationPage.vue')
   },
   {
-    path: '/sadbhavna/donate/:name',
+    path: '/sadbhavna/donate/:name&:price',
     name: 'Donate',
     component: () => import('@/pages/Donate.vue')
+  },
+  {
+    path: '/sadbhavna/registration',
+    name: 'Registration',
+    component: () => import('@/pages/auth/Registration.vue')
+  },
+  {
+    path: '/sadbhavna/contact-us',
+    name: 'Contact Us',
+    component: () => import('@/pages/ContactUs.vue')
+  },
+  {
+    path: '/sadbhavna/profile/:name',
+    name: 'Profile',
+    component: () => import('@/pages/auth/ProfilePage.vue')
+  },
+  {
+    path: '/sadbhavna/request-campaign',
+    name: 'Donation Campaign Request',
+    component: () => import('@/pages/DonationCampaignRequest.vue')
   }
+
 ]
 
 let router = createRouter({

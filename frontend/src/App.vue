@@ -15,6 +15,11 @@ export default {
 	components: {
 		Toasts,
 	},
+  setup(){
+    const user = ref({})
+    provide("user", user)
+    return { user }
+  },
   mounted() {
       window.addEventListener("online", () => {
         this.$clearToasts()
@@ -36,11 +41,18 @@ export default {
           position: "bottom-right",
         })
       })
+      this.user = {
+        isLoggedIn: () => {
+          const cookie = Object.fromEntries(
+            document.cookie
+              .split("; ")
+              .map((part) => part.split("="))
+              .map((d) => [d[0], decodeURIComponent(d[1])])
+            )
+          return cookie.user_id && cookie.user_id !== "Guest"
+        },
+      }
     }
   }
 </script>
-
-
-
-
 

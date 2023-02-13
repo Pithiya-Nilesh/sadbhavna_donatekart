@@ -61,7 +61,7 @@
   },
   {
    "fieldname": "about_campaign",
-   "fieldtype": "Text Editor",
+   "fieldtype": "Text",
    "label": "About Camapign (In Details)"
   },
   {
@@ -177,7 +177,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2023-02-06 15:13:08.694067",
+ "modified": "2023-02-08 19:48:27.308413",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",
