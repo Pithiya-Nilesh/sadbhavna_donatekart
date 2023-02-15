@@ -40,6 +40,16 @@ const routes = [
     path: '/sadbhavna/request-campaign',
     name: 'Donation Campaign Request',
     component: () => import('@/pages/DonationCampaignRequest.vue')
+  },
+  {
+    path: '/sadbhavna/donation-success-page/:donation',
+    name: 'Donation Success Page',
+    component: () => import('@/components/DonationSuccessPage.vue')
+  },
+  {
+    path: '/sadbhavna/faq',
+    name: 'Faq',
+    component: () => import('@/components/Faq.vue')
   }
 
 ]

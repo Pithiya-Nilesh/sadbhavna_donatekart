@@ -167,8 +167,8 @@
                             </div>
                         </div> -->
 
-                        <div class="text-center text-2xl text-gray-600">Your Donations</div>
-                        <div class="flex flex-col">
+                        <div v-if="donation_details.data != ''" class="text-center text-2xl text-gray-600">Your Donations</div>
+                        <div v-if="donation_details.data != ''" class="flex flex-col">
                             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                                 <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                                     <div class="overflow-hidden">
@@ -191,6 +191,10 @@
                                                         class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                                         Mode of Payment
                                                     </th>
+                                                    <th scope="col"
+                                                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                                        Download 80G Certificate
+                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -208,6 +212,10 @@
                                                     <td
                                                         class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                         {{ donation.mode_of_payment }}</td>
+                                                    <td
+                                                        class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                                                        @click="download_80g(donation.name, donation.date)">
+                                                        Download</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -215,9 +223,10 @@
                                 </div>
                             </div>
                         </div>
-
-
-
+                        <div v-else>
+                        <div class="text-center font-bold text-gray-500"> Donate Item to see Donations and Download Certificate </div>    
+                        <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold"><router-link to="/home">Click Here To Show Campaign</router-link></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -238,13 +247,31 @@ export default {
     data() {
         return {
             user_data: '',
-            donation_details: ''
+            donation_details: '',
+            donor: ''
         }
     },
     mounted() {
         const name = useRoute();
         this.get_user_detail(name.params.name)
         this.get_donation_details(name.params.name)
+        this.donor = name.params.name
+    },
+    resources: {
+        download_80g(){
+            return{
+                method: 'sadbhavna_donatekart.api.donor.download_80g',
+                onSuccess:(res) => {
+                    console.log("okey", res)
+                    let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
+                    window.location = url;
+                },
+                onError: (error) => {
+                    console.log("somthing want wrong!", error)
+                }
+
+            }
+        }
     },
     methods: {
         get_user_detail(name) {
@@ -254,7 +281,7 @@ export default {
             })
                 .then(response => {
                     response.json().then(res => {
-                        console.log("asdf", res)
+                        // console.log("asdf", res)
                         this.user_data = res
                     });
                 })
@@ -268,11 +295,18 @@ export default {
                 method: 'GET'
             }).then(response => {
                 response.json().then(res => {
-                    console.log("campaign", res)
+                    // console.log("campaign", res)
                     this.donation_details = res
                 });
             }).catch(error => {
                 console.log(error);
+            })
+        },
+        download_80g(donation, date){
+            this.$resources.download_80g.submit({
+                donation: donation,
+                date: date,
+                donor: this.donor
             })
         }
     }

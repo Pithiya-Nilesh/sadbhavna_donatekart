@@ -25,16 +25,32 @@ def register(first_name, last_name, email, password, phone_number, pan_number):
     donor.insert(ignore_permissions=True)
     frappe.db.commit() 
 
+# @frappe.whitelist(allow_guest=True)
+# def set_details_in_doctype_after_donation(user_id, campaign, item, price):
+#     donor = frappe.db.get_value("Donor", filters={"email": f"{user_id}"}, fieldname=["name"], pluck="name")
+#     donation = frappe.get_doc({"doctype": "Donation", "donor": donor, "campaign": f"{campaign}", "date": today(), "amount": price, "donation_item": [{"item": item, "qty": 1, "rate": price, "amount": price}]}) 
+#     donation.insert(ignore_permissions=True)
+#     frappe.db.commit()
+
+#     # raised_amount = frappe.db.get_value("Donation Campaign", filters={"name": campaign}, fieldname=["raised_amount"], pluck="name")
+#     raised_amount, donation_amount = frappe.db.get_value("Donation Campaign", filters={"name": campaign}, fieldname=["raised_amount", "donation_amount"])
+#     total = int(price) + int(raised_amount)
+#     if total >= int(donation_amount):
+#         frappe.db.set_value("Donation Campaign", campaign, "raised_amount", total)
+#         frappe.db.set_value("Donation Campaign", campaign, "published", 0)
+#     else:
+#         frappe.db.set_value("Donation Campaign", campaign, "raised_amount", total)
+
 @frappe.whitelist(allow_guest=True)
-def set_details_in_doctype_after_donation(user_id, campaign, item, price):
+def set_details_in_doctype_after_donation(user_id, campaign, item, amount):
     donor = frappe.db.get_value("Donor", filters={"email": f"{user_id}"}, fieldname=["name"], pluck="name")
-    donation = frappe.get_doc({"doctype": "Donation", "donor": donor, "campaign": f"{campaign}", "date": today(), "amount": price, "donation_item": [{"item": item, "qty": 1, "rate": price, "amount": price}]}) 
+    donation = frappe.get_doc({"doctype": "Donation", "donor": donor, "campaign": f"{campaign}", "date": today(), "amount": amount, "donation_item": item}) 
     donation.insert(ignore_permissions=True)
     frappe.db.commit()
 
     # raised_amount = frappe.db.get_value("Donation Campaign", filters={"name": campaign}, fieldname=["raised_amount"], pluck="name")
     raised_amount, donation_amount = frappe.db.get_value("Donation Campaign", filters={"name": campaign}, fieldname=["raised_amount", "donation_amount"])
-    total = int(price) + int(raised_amount)
+    total = int(amount) + int(raised_amount)
     if total >= int(donation_amount):
         frappe.db.set_value("Donation Campaign", campaign, "raised_amount", total)
         frappe.db.set_value("Donation Campaign", campaign, "published", 0)

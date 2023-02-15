@@ -1,9 +1,9 @@
 <template>
-  <div class="pt-2 pl-2 md:pl-10 lg:pl-16 pr-2 md:pr-10 lg:pr-16">
-    <nav class="rounded-xl flex items-center flex-wrap p-4 justify-between bg-green-500 p-6">
+  <div class="pt-2 pl-2 md:pl-10 lg:pl-28 pr-2 md:pr-10 lg:pr-28">
+    <nav class="rounded-xl flex items-center flex-wrap p-6 justify-between bg-green-500">
 
       <div class="flex items-center flex-shrink-0 text-white mr-6 ">
-        <img src="../../src/assets/Inter/img/logo.png" class="w-36 h-16 ml-2" />
+        <img src="../../src/assets/Inter/img/logo.png" class="w-48 h-20 ml-6" />
       </div>
       <div class="block lg:hidden">
         <button @click="isOpen = !isOpen"
@@ -21,20 +21,20 @@
 
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto ">
         <div :class="isOpen ? 'block' : 'hidden'" class="text-sm lg:flex-grow">
-          <a href="/home" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4 ">
+          <a href="/home" class="block mt-4 font-bold lg:inline-block lg:mt-0 text-white hover:text-black mr-4 ">
             Home
           </a>
-          <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4">
+          <a href="#" class="block mt-4 font-bold lg:inline-block lg:mt-0 text-white hover:text-black mr-4">
             About
           </a>
-          <div class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4 cursor-pointer" @click="this.$router.push(`/sadbhavna/request-campaign`)">
+          <div class="block mt-4 lg:inline-block font-bold lg:mt-0 text-white hover:text-black mr-4 cursor-pointer" @click="this.$router.push(`/sadbhavna/request-campaign`)">
             Request a Campaign
           </div>
-          <a href="/sadbhavna/contact-us" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4">
+          <a href="/sadbhavna/contact-us" class="block font-bold mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4">
             Contact Us
           </a>
           <span class="group relative inline-block">
-            <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4">
+            <a href="#" class="block mt-4 lg:inline-block font-bold lg:mt-0 text-white hover:text-black mr-4">
               Blog
             </a>
             <ul class="absolute hidden pt-1 text-gray-700 group-hover:block">
@@ -43,7 +43,7 @@
             </ul>
           </span>
           <span class="group relative inline-block">
-            <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4">
+            <a href="#" class="block mt-4 lg:inline-block font-bold lg:mt-0 text-white hover:text-black mr-4">
               Page
             </a>
             <ul class="absolute hidden pt-1 text-gray-700 group-hover:block">

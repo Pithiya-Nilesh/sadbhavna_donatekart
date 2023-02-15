@@ -1,6 +1,7 @@
 <template>
     <Navbar />
     <div class="container mx-auto h-full">
+        
         <div class="w-full sm:pt-0 md:pt-5 lg:pt-12 bg-grey-lightest">
             <div class="container mx-auto py-0">
                 <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
