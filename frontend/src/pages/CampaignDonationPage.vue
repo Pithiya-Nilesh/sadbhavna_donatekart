@@ -69,9 +69,9 @@
                             <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                             <div class="flex justify-between">
                                 <!-- <button
-                                    class="rounded-lg bg-green-500 text-white active:bg-green-500 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
-                                    type="button" @click="donate(products.item, products.price)"> donate now
-                                </button> -->
+                                        class="rounded-lg bg-green-500 text-white active:bg-green-500 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
+                                        type="button" @click="donate(products.item, products.price)"> donate now
+                                    </button> -->
                                 <div class="flex justify-between w-24 text-xl h-10">
                                     <Button class="bg-gray-300"
                                         @click="decrement(products.item, products.price, qty)">-</Button>
@@ -92,81 +92,81 @@
                         <!-- ******************************************** -->
 
                         <!-- <div class="block rounded-lg shadow-lg bg-white pl-5">
-                            <div class="flex flex-wrap items-center pt-10">
-                                <div class="lg:flex lg:w-3/12 xl:w-3/12">
-                                    <img :src="products.image" :alt="products.display_as_name"
-                                        class="rounded-full w-30 h-20" />
-                                </div>
-                                <div class="lg:w-9/12 xl:w-9/12">
-                                    <div class="md:px-12">
-                                        <h4 class="text-xl text-green-500">{{ products.display_as_name }}</h4>
-                        
-                                        <p class="text-gray-500 mb-2">
-                                            {{ products.about }}
-                                        </p>
-                                        <p class="text-gray-500 font-bold pb-5">
-                                            ₹ {{ products.price }}
-                                        </p>
+                                <div class="flex flex-wrap items-center pt-10">
+                                    <div class="lg:flex lg:w-3/12 xl:w-3/12">
+                                        <img :src="products.image" :alt="products.display_as_name"
+                                            class="rounded-full w-30 h-20" />
                                     </div>
+                                    <div class="lg:w-9/12 xl:w-9/12">
+                                        <div class="md:px-12">
+                                            <h4 class="text-xl text-green-500">{{ products.display_as_name }}</h4>
+                            
+                                            <p class="text-gray-500 mb-2">
+                                                {{ products.about }}
+                                            </p>
+                                            <p class="text-gray-500 font-bold pb-5">
+                                                ₹ {{ products.price }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+                                <div class="flex justify-between">
+                                    
+                                    <div v-if="item_cart != ''">
+                                        <div v-for="item in item_cart" class="flex justify-between w-24 text-xl h-10">
+
+                                            <div v-if="products.item == item.item">
+                                            <Button class="bg-gray-300"
+                                                @click="decrement(products.item, products.price, item.qty)">
+                                                -
+                                            </Button>
+                                            </div>
+
+                                            <div>
+                                                <div class="bg-green-500 p-3 rounded-lg justify-center pb-5"
+                                                    v-if="products.item == item.item && item.qty != 0"> {{ item.qty }}
+                                                </div>
+                                                <div v-else-if = "products.item == item.item && item.qty == 0" class="bg-green-500 p-3 rounded-lg justify-cebter pb-5">adsf</div>
+                                            </div>
+
+                                            <div v-if="products.item == item.item && item.qty != 0">
+                                            <Button class="bg-gray-300"
+                                                @click="increment(products.item, products.price, qty)">
+                                                +
+                                            </Button>
+                                        </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div v-else>
+                                        <div class="flex justify-between w-24 text-xl h-10">
+
+                                            <Button class="bg-gray-300"
+                                                @click="decrement(products.item, products.price, qty)">
+                                                -
+                                            </Button>
+
+                                            <div>
+                                                <div class="bg-green-500 p-3 rounded-lg justify-center pb-5">
+                                                    0
+                                                </div>
+                                            </div>
+
+                                            <Button class="bg-gray-300"
+                                                @click="increment(products.item, products.price, qty)">
+                                                +
+                                            </Button>
+                                        </div>
+                                    </div>
+
+
+
+
                                 </div>
                             </div>
-                            <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
-                            <div class="flex justify-between">
-                                
-                                <div v-if="item_cart != ''">
-                                    <div v-for="item in item_cart" class="flex justify-between w-24 text-xl h-10">
-
-                                        <div v-if="products.item == item.item">
-                                        <Button class="bg-gray-300"
-                                            @click="decrement(products.item, products.price, item.qty)">
-                                            -
-                                        </Button>
-                                        </div>
-
-                                        <div>
-                                            <div class="bg-green-500 p-3 rounded-lg justify-center pb-5"
-                                                v-if="products.item == item.item && item.qty != 0"> {{ item.qty }}
-                                            </div>
-                                            <div v-else-if = "products.item == item.item && item.qty == 0" class="bg-green-500 p-3 rounded-lg justify-cebter pb-5">adsf</div>
-                                        </div>
-
-                                        <div v-if="products.item == item.item && item.qty != 0">
-                                        <Button class="bg-gray-300"
-                                            @click="increment(products.item, products.price, qty)">
-                                            +
-                                        </Button>
-                                    </div>
-
-                                    </div>
-                                </div>
-
-                                <div v-else>
-                                    <div class="flex justify-between w-24 text-xl h-10">
-
-                                        <Button class="bg-gray-300"
-                                            @click="decrement(products.item, products.price, qty)">
-                                            -
-                                        </Button>
-
-                                        <div>
-                                            <div class="bg-green-500 p-3 rounded-lg justify-center pb-5">
-                                                0
-                                            </div>
-                                        </div>
-
-                                        <Button class="bg-gray-300"
-                                            @click="increment(products.item, products.price, qty)">
-                                            +
-                                        </Button>
-                                    </div>
-                                </div>
-
-
-
-
-                            </div>
-                        </div>
- -->
+     -->
 
 
 
@@ -180,7 +180,7 @@
                         <div class="text-green-500">₹ {{ total_price }}</div>
                         <button
                             class="rounded-lg bg-green-500 text-white active:bg-green-500 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
-                            type="button" @click="donate()"> donate now
+                            type="button" @click="donate(total_price)"> donate now
                         </button>
 
                         <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
@@ -260,8 +260,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <div
-                                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+                            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
                                 <div class="px-4 py-5 flex-auto">
                                     <div class="tab-content tab-space overflow-y-auto h-40">
                                         <div v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
@@ -284,21 +283,21 @@
 
                                                 <div class="block rounded-lg shadow-lg bg-white">
                                                     <!-- <div class="flex flex-wrap items-center">
-                                            <div class="lg:flex lg:w-2/12 xl:w-3/12">
-                                            <img :src="image" :alt="image"
-                                                class="rounded-full"/>
-                                            </div>
-                                            <div class="lg:w-8/12 xl:w-9/12">
-                                                <div>
-                                                    <h4 v-if="donation.anonymous != 1" class="font-bold">{{ donation.donor_name }}</h4>
-                                                    <h4 v-else class="font-bold">Anonymous</h4>
-                                                    <p>{{ donation.creation }}</p>
+                                                <div class="lg:flex lg:w-2/12 xl:w-3/12">
+                                                <img :src="image" :alt="image"
+                                                    class="rounded-full"/>
                                                 </div>
-                                                <div>
-                                                    {{ donation.amount }}
+                                                <div class="lg:w-8/12 xl:w-9/12">
+                                                    <div>
+                                                        <h4 v-if="donation.anonymous != 1" class="font-bold">{{ donation.donor_name }}</h4>
+                                                        <h4 v-else class="font-bold">Anonymous</h4>
+                                                        <p>{{ donation.creation }}</p>
+                                                    </div>
+                                                    <div>
+                                                        {{ donation.amount }}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div> -->
+                                            </div> -->
                                                     <!-- <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"> -->
                                                 </div>
                                                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
@@ -406,7 +405,7 @@
             </section>
         </div>
     </div>
-    <Footer />
+<Footer />
 </template>
 
 <script>
@@ -525,28 +524,44 @@ export default {
             })
 
         },
-        donate(name, price) {
+        donate(total_price) {
             if (!this.user.isLoggedIn()) {
                 console.log("if not logged in")
                 this.$router.push(`/sadbhavna/login`)
                 // return
             }
             else {
-                const cookie = Object.fromEntries(
-                    document.cookie
-                        .split("; ")
-                        .map((part) => part.split("="))
-                        .map((d) => [d[0], decodeURIComponent(d[1])])
-                )
-                this.$resources.set_details_in_doctype_after_donation.submit({
-                    user_id: cookie.user_id,
-                    campaign: this.campaign,
-                    item: this.item_cart,
-                    amount: this.total_price
-                })
-                // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
+                // call razor pay api
+                let status = "captured"
+                if (status == "captured") {
+                   let payment_id = "pay_L0nSsccovt6zyp"
+
+                    const cookie = Object.fromEntries(
+                        document.cookie
+                            .split("; ")
+                            .map((part) => part.split("="))
+                            .map((d) => [d[0], decodeURIComponent(d[1])])
+                    )
+                    this.$resources.set_details_in_doctype_after_donation.submit({
+                        user_id: cookie.user_id,
+                        campaign: this.campaign,
+                        item: this.item_cart,
+                        amount: this.total_price,
+                        payment_id : payment_id
+                    })
+                    // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
+                }
+                else{
+                    alert("Payment Not Done")
+                }
             }
         },
+
+        // donate(total_price){
+        //     //call razor pay api
+        //     // onSuccess
+
+        // },
 
         // get_campaign_donation_detail(name){
         //     // axios.get('/api/resource/Donation Campaign/GIVE-TH-16-01-2023-0001').then((response) => {

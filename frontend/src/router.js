@@ -12,6 +12,11 @@ const routes = [
     component: () => import('@/pages/auth/Login.vue'),
   },
   {
+    path: '/sadbhavna/auto-login',
+    name: 'Auto Login',
+    component: () => import('@/pages/auth/AutoLogin.vue')
+  },
+  {
     path: '/sadbhavna/campaign-donation/:name',
     name: 'CampaignDonation',
     component: () => import('@/pages/CampaignDonationPage.vue')
@@ -50,8 +55,8 @@ const routes = [
     path: '/sadbhavna/faq',
     name: 'Faq',
     component: () => import('@/components/Faq.vue')
-  }
-
+  },
+  
 ]
 
 let router = createRouter({
